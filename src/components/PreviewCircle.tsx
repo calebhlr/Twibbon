@@ -7,12 +7,13 @@ type Props = { imageUrl: string | null; transform: Transform; onTransform: (upda
 export function PreviewCircle({ imageUrl, transform, onTransform }: Props) {
   const pointerDown = (event: PointerEvent<HTMLDivElement>) => {
     if (!imageUrl) return
-    event.currentTarget.setPointerCapture(event.pointerId)
+    const preview = event.currentTarget
+    preview.setPointerCapture(event.pointerId)
     const start = { x: event.clientX, y: event.clientY, imageX: transform.x, imageY: transform.y }
-    const move = (moveEvent: PointerEvent<HTMLDivElement>) => onTransform(previous => ({ ...previous, x: start.imageX + moveEvent.clientX - start.x, y: start.imageY + moveEvent.clientY - start.y }))
-    const up = () => { event.currentTarget.removeEventListener('pointermove', move); event.currentTarget.removeEventListener('pointerup', up) }
-    event.currentTarget.addEventListener('pointermove', move)
-    event.currentTarget.addEventListener('pointerup', up)
+    const move = (moveEvent: globalThis.PointerEvent) => onTransform(previous => ({ ...previous, x: start.imageX + moveEvent.clientX - start.x, y: start.imageY + moveEvent.clientY - start.y }))
+    const up = () => { preview.removeEventListener('pointermove', move); preview.removeEventListener('pointerup', up) }
+    preview.addEventListener('pointermove', move)
+    preview.addEventListener('pointerup', up)
   }
   return <section className={'preview-shell' + (imageUrl ? ' has-image' : '')} aria-label="Prévia da sua imagem">
     <div className="preview" onPointerDown={pointerDown} title={imageUrl ? 'Arraste para reposicionar a foto' : undefined}>
