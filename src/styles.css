@@ -1,7 +1,15 @@
 @import 'tailwindcss';
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;700&display=swap');
 
-:root { font-family: 'DM Sans', Arial, sans-serif; color: #121212; background: #ff3b30; font-synthesis: none; }
+:root {
+  font-family: 'DM Sans', Arial, sans-serif;
+  color: #121212;
+  background-color: #f5f3ec;
+  background-image: radial-gradient(rgba(70, 62, 48, .14) .55px, transparent .7px), radial-gradient(rgba(255, 255, 255, .7) .55px, transparent .7px);
+  background-position: 0 0, 3px 4px;
+  background-size: 7px 7px, 9px 9px;
+  font-synthesis: none;
+}
 * { box-sizing: border-box; } body { margin: 0; min-width: 320px; } button, input { font: inherit; } button { cursor: pointer; }
 main { width: min(100%, 540px); min-height: 100vh; margin: auto; padding: 30px 24px 22px; display: flex; flex-direction: column; align-items: stretch; }
 .header { text-align: center; }.eyebrow { margin: 0 0 6px; font-size: .72rem; letter-spacing: .14em; font-weight: 700; }.header h1 { margin: 0; font-family: 'Archivo Black', Impact, sans-serif; font-size: clamp(2.2rem, 10vw, 3.7rem); line-height: .82; letter-spacing: -.07em; }.header h1 em { font-style: normal; color: #ccff00; }.subtitle { max-width: 315px; margin: 17px auto 25px; font-size: .94rem; line-height: 1.35; }
