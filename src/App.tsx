@@ -43,7 +43,7 @@ export default function App() {
     const base = Math.max(size / photo.width, size / photo.height) * (transform.scale / 50)
     context.drawImage(photo, -photo.width * base / 2, -photo.height * base / 2, photo.width * base, photo.height * base); context.restore()
     context.drawImage(frame, 0, 0, size, size)
-    const link = document.createElement('a'); link.download = 'gandini-20000.png'; link.href = canvas.toDataURL('image/png'); link.click()
+    const link = document.createElement('a'); link.download = 'camply-90000.png'; link.href = canvas.toDataURL('image/png'); link.click()
   }
   return <main><Header /><PreviewCircle imageUrl={imageUrl} transform={transform} onTransform={setTransform} />
     <section className="upload-actions" aria-label="Escolha sua foto">
