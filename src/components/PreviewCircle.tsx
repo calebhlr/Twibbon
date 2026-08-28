@@ -18,7 +18,7 @@ export function PreviewCircle({ imageUrl, transform, onTransform }: Props) {
   return <section className={'preview-shell' + (imageUrl ? ' has-image' : '')} aria-label="Prévia da sua imagem">
     <div className="preview" onPointerDown={pointerDown} title={imageUrl ? 'Arraste para reposicionar a foto' : undefined}>
       {imageUrl ? <img className="user-photo" src={imageUrl} alt="Sua foto para personalização" draggable="false" style={{ transform: `translate(-50%, -50%) translate(${transform.x}px, ${transform.y}px) scale(${transform.scale / 50}) rotate(${transform.rotation}deg)` }} /> : <div className="empty-preview"><span>◎</span><b>Sua foto aqui</b><small>Escolha uma imagem para começar</small></div>}
-      <img className="frame" src={frameUrl} alt="Moldura Deputado Gandini 20.000" />
+      <img className="frame" src={frameUrl} alt="Moldura Camply 90.000" />
     </div>
     {imageUrl && <p className="drag-tip">↔ Arraste a foto para reposicionar</p>}
   </section>
