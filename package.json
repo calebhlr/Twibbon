@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "npx wrangler versions upload"
+    "deploy": "bun run build && npx wrangler versions upload --assets=./dist"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
